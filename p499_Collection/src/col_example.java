@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 public class col_example {
     @SuppressWarnings({"all"})
@@ -25,7 +26,62 @@ public class col_example {
         // iterator = col.iterator();
         // System.out.println(iterator.next());
 
+        //增强for 底层仍然是迭代器 (简化版的迭代器遍历)
+        // System.out.println();
+        // for(Object book:col){
+        //     System.out.println("book: "+book);
+        // }
+
+        System.out.println();
+        List list = new ArrayList();
+        list.add(new Dog("大黄",20));
+        list.add(new Dog("小汪",10));
+        list.add(new Dog("小黄",10));
+
+        for(Object dog : list){
+            System.out.println("dog = "+dog);
+        }
+        Iterator iterator2 = list.iterator();
+        System.out.println("迭代器编译结果：");
+        int cnt=0;
+        while(iterator2.hasNext()){
+            Object dog = iterator2.next();
+            System.out.println("11 "+dog);
+            // System.out.println(2);
+            // System.out.println("22 "+iterator2.next()); //为啥输出没有两遍小汪，这个next到底咋回事
+            cnt++;
+        }
+        System.out.println(cnt);
+
+        
+
     }
+}
+class Dog{
+    private String name;
+    private int age;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    @Override
+    public String toString() {
+        return "Dog [name=" + name + ", age=" + age + "]";
+    }
+    public Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    
 }
 class Book{
     private String name;

@@ -65,9 +65,21 @@ TreeMap implements Map
 
 Collection接口遍历元素
 方式1：使用Iterator (迭代器)(仅用于遍历集合，本身并不存放对象)
+Iterator对象称为迭代器，主要用于遍历Collection集合中的元素
+所有实现了Collection接口的集合类都有一个.iterator()方法，用于返回一个实现了Iterator接口的对象，即可以返回一个迭代器。
 tips：调用iterator.next()方法前，必须调用iterator.hasNext()进行检测。
 若没调用，并且下条记录无效，直接调用it.next()会抛出NoSuchElementException异常。
 
-看到p503 集合增强for
+方式2：增强for
+
+
+List：
+1.集合类中元素有序(添加和取出顺序一致)，且可重复
+2.每个元素都有其对应的顺序缩印，从0开始 (eg. list.get(3))
+3.遍历方式：Iterator，赠钱for，普通for
+
+ArrayList:
+写完可以抄上
+
 */
 
