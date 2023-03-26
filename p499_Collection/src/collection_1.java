@@ -52,7 +52,7 @@ Map接口的实现子类，是双列集合，存放K-V (Key和Value，键值对)
 
 单列集合：
 Vector, ArrayList, LinkedList implements List接口 (相当于也implements Collection)
-TreeSet, HashSet implements Set接口 (相当于也implements Collection)
+TreeSet, HashSet(LinkedHashSet implements HashSet) implements Set接口 (相当于也implements Collection)
 List, Set implements Collection
 Collection implements Iterable
 
@@ -60,7 +60,7 @@ Collection implements Iterable
 Properties extends Hashtable
 LinkedHashMap extends HashMap, implements Map
 Hashtable implements Map
-HashMap implements Map
+HashMap implements Map (使用频率最高)
 TreeMap implements Map
 
 Collection接口遍历元素
@@ -79,7 +79,7 @@ List：
 3.遍历方式：Iterator，赠钱for，普通for
 
 ArrayList:
-写完可以抄上
+写完可以抄上，在array_vector_linkedlist.java里
 
 */
 

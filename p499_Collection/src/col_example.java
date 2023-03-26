@@ -38,17 +38,17 @@ public class col_example {
         list.add(new Dog("小汪",10));
         list.add(new Dog("小黄",10));
 
-        for(Object dog : list){
-            System.out.println("dog = "+dog);
-        }
+        // for(Object dog : list){
+        //     System.out.println("dog = "+dog);
+        // }
         Iterator iterator2 = list.iterator();
         System.out.println("迭代器编译结果：");
         int cnt=0;
         while(iterator2.hasNext()){
             Object dog = iterator2.next();
             System.out.println("11 "+dog);
-            // System.out.println(2);
-            // System.out.println("22 "+iterator2.next()); //为啥输出没有两遍小汪，这个next到底咋回事
+            System.out.println();
+            System.out.println("22 "+iterator2.next()); //为啥输出没有两遍小汪，这个next到底咋回事
             cnt++;
         }
         System.out.println(cnt);
