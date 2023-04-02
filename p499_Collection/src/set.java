@@ -272,6 +272,7 @@ class Dog{
     }
     
     
+    
 }
 /*
 Set
@@ -304,7 +305,7 @@ HashSet底层机制(扩容，红黑树机制)
 1.HashSet底层是HashMap，第一次添加时，table数组扩容到16，
 临界值(threshold) = 16 * 0.75 (加载因子, loadFactor) = 12
 2.如果table数组使用到了临界值12，就扩容2倍，16*2=32。新的临界值就是32*0.75=24，以此类推
-3.在Java8中，如果一条链表的元素个数到达TREEIFY_THRESHOLD(默认=8)，并且table的大小>=MIN_TREEIFY_THRESHOLD(默认64)，就会进行树化(红黑树)，否则仍然采用数组扩容机制
+3.在Java8中，如果一条链表的元素个数到达TREEIFY_THRESHOLD(默认=8)，并且table的大小 >= MIN_TREEIFY_THRESHOLD(默认64)，就会进行树化(红黑树)，否则仍然采用数组扩容机制
 
 LinkedHashSet：
 1.是HashSet的子类
@@ -313,6 +314,16 @@ LinkedHashSet：
 (也就是加入和取出元素/数据的顺序一致)
 4.不允许添加重复元素
 
+TreeSet
+保证set按照某个规则进行排序
+1.当使用无参构造器，创建TreeSet时，仍然是无序的
+(2.希望添加的元素，按照字符串大小/长度等进行排序)
+3.使用TreeSet提供的构造器，可以传入一个比较器(匿名内部类)，并指定排序规则
+去重机制：
+a.如果传入了一个Comparator匿名对象，就使用实现的compare去重，如果方法返回0，则认为是相同元素/数据，就不添加。
+b.如果没有传入一个Comparator匿名对象，则以添加的对象实现的Comparable接口的compareTo去重
+(eg. treeset.add("hsp"); treeset.add("hsp"); 会报错。字符串本身就实现了Comparable接口，而字符串的compareTo比较的是内容)
+(eg. treeset.add(new Person()); Person类中需实现Comparable接口，并重写compareTo方法)
 
-看到p529 19:26 抄/看下源码分析
+
 */

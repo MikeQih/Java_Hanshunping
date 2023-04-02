@@ -7,7 +7,7 @@ import java.util.Vector;
 public class list_method {
     @SuppressWarnings({"all"})
     public static void main(String[] args) {
-        List list = new ArrayList();
+        List list = new ArrayList(); //List是有序的
         list.add("mike");
         list.add("david");
         list.add(1,"lucas"); //不写索引，默认加到末尾

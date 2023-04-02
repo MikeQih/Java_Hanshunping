@@ -4,9 +4,37 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.tree.TreeNode;
+
+
+class A{
+    private int num;
+
+    public A(int num) {
+        this.num = num;
+    }
+
+    @Override
+    public int hashCode() {
+        return 100;
+    }
+
+    @Override
+    public String toString() {
+        return "A [num=" + num + "]";
+    }
+    
+}
 public class map {
     @SuppressWarnings({"all"})
     public static void main(String[] args) {
+        HashMap hashMap = new HashMap();
+        for(int i=1;i<=12;i++){
+            hashMap.put(new A(i), "hello");
+        }
+        System.out.println("hashMap = "+hashMap); //12个k-v
+        System.out.println(hashMap.getClass()+"\n");
+
         Map map = new HashMap();
         map.put("no1", "mike");
         map.put("no2", "david");//底层HashMap，无序存储
@@ -90,8 +118,6 @@ public class map {
         System.out.println(set2.getClass());
         Collection values = map.values();
         System.out.println(values.getClass());
-
-        
     }
 }
 /*
@@ -117,6 +143,58 @@ Map:
 
 常用方法：put, get, size, isEmpty, clear, containsKey
 
-看到p537
-19:28
+扩容机制：和HashSet相同
+1.HashMap底层维护了Node类型的数组table，默认为null 
+2.创建对象时，加载因子(loadfactor)初始化为0.75
+3.添加key-val时，通过key的哈希值得到在table的索引。判断该索引是否有元素，没有就直接添加；
+有的话继续判断该元素的key和准备加入的key是否相等：如果相等，直接替换val；不相等，判断是树结构还是链表结构，做出相应处理。
+如果添加时容量不够，则需要扩容。
+4.第一次添加，扩容table容量为16，临界值(threshold) = 16 * 0.75 (loadFactor) = 12
+5.如果table数组使用到了临界值12，就扩容2倍，16*2=32。新的临界值就是32*0.75=24，以此类推
+6.在Java8中，如果一条链表的元素个数到达TREEIFY_THRESHOLD(默认=8)，并且table的大小 >= MIN_TREEIFY_THRESHOLD(默认64)，就会进行树化(红黑树)，否则仍然采用数组扩容机制。
+
+
+Hashtable(extends Dictionary,也实现了Map接口。和HashMap平级)
+1.存放的元素是键值对，即K-V。
+2.Hashtable的键和值都不能为null，否则会抛出NullPointerException。
+3.使用方法基本和HashMap一样
+4.Hashtable是线程安全的，HashMap是线程不安全的
+
+Hashtable底层：
+1.底层有数组 Hashtable$Entry[] 初始化大小为11
+2.临界值threshold 8 = 11*0.75
+3.执行 方法addEntry(hash,key,value,index); 添加K-V 封装到Entry
+4.当if(count>=threshold)满足时，进行扩容。
+按照int newCapacity = (oldCapacity<<1)+1; 的大小扩容（x2+1）
+
+
+Properties：
+1.是HashTable的子类，间接实现Map接口
+2.使用特点和Hashtable类似
+3.Propertiese还可以用于从xxx.properties文件中，加载数据到Properties类对象，并进行读取和修改
+4.说明：工作后，xxx.properties文件通常作为配置文件，此知识点在IO流举例
+
+选择集合实现类的逻辑：
+1.判断存储的类型：一组对象(单列) 或 一组键值对(双列)
+
+2.一组对象：Collection接口
+a.允许重复：List
+增删多：LinkedList(底层维护了一个双向链表)
+改查多：ArrayList(底层维护Object类型的可变数组)
+b.不允许重复：Set
+无序：HashSet(底层是HashMap，维护了一个哈希表，即(数组+链表+红黑树))
+排序：TreeSet
+插入和取出顺序一致：LinkedHashSet，维护数组+双向链表
+
+3.一组键值对：Map
+键无序：HashMap(底层是：哈希表，jdk7：数组+链表，jdk8:数组+链表+红黑树)
+键排序：TreeMap
+键插入和取出顺序一致：LinkedHashMap
+读取文件：Properties
+
+
+TreeMap：
+保证 键值对 按照某个规则(键)进行排序
+
+
 */

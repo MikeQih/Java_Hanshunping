@@ -74,12 +74,16 @@ tips：调用iterator.next()方法前，必须调用iterator.hasNext()进行检�
 
 
 List：
-1.集合类中元素有序(添加和取出顺序一致)，且可重复
-2.每个元素都有其对应的顺序缩印，从0开始 (eg. list.get(3))
+1.集合类中元素有序(添加和取出顺序一致)，且可插入重复的元素
+2.每个元素都有其对应的顺序索引，从0开始 (eg. list.get(3))
 3.遍历方式：Iterator，赠钱for，普通for
 
 ArrayList:
 写完可以抄上，在array_vector_linkedlist.java里
+
+
+Collections工具类：
+补上可以
 
 */
 
