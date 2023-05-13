@@ -3,6 +3,7 @@ public class Tank {
     private int y; //坦克纵坐标
     private int dir; //0 1 2 3 上右下左
     private int speed = 5; //坦克速度
+    boolean isLive = true;
 
     
     public void moveUp(){
