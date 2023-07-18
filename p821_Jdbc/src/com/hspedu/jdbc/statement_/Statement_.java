@@ -11,6 +11,7 @@ import java.util.Scanner;
 /**
  * 演示statement的注入问题
  */
+@SuppressWarnings({"all"})
 public class Statement_ {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);

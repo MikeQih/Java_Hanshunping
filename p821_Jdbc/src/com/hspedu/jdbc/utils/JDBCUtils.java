@@ -13,6 +13,7 @@ import java.util.Properties;
 /**
  * 这是一个工具类，完成mysql的连接和关闭资源
  */
+@SuppressWarnings({"all"})
 public class JDBCUtils {
     //定义相关属性(4个)，因为只需要一份，因此做成static
     private static String user; //用户名

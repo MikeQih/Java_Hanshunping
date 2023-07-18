@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.util.Properties;
 import java.util.Scanner;
 
+@SuppressWarnings({"all"})
 public class PreparedStatementDML_ {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);

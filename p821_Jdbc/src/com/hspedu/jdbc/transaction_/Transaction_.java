@@ -9,6 +9,7 @@ import com.hspedu.jdbc.utils.JDBCUtils;
 /**
  * 演示jdbc中 如何使用事务
  */
+@SuppressWarnings({"all"})
 public class Transaction_ {
     public static void main(String[] args) {
         // noTransaction();

@@ -19,8 +19,7 @@ public class PreparedStatement_ {
         System.out.println("请输入管理员的名字："); //next():当接收到 空格 或者 ' 就表示结束
         String admin_name = scanner.nextLine(); //如果希望看到sql注入，就需要用nextLine() (nextLine回车才算结束)
         System.out.println("请输入管理员的密码：");
-        String admin_pwd = scanner.nextLine();
-
+        String admin_pwd = scanner.nextLine(); //'tom',123
 
         Properties properties = new Properties();
         properties.load(new FileInputStream("/Users/hengchangqi/c_vscode/Java_Hanshunping/p821_Jdbc/src/mysql.properties"));

@@ -1,14 +1,7 @@
-import java.io.EOFException;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOError;
 import java.io.IOException;
-import java.io.Serializable;
-import java.sql.SQLException;
-import java.util.Scanner;
 
-import javax.swing.InputMap;
 class Father{
     public void method() throws IOException{
         

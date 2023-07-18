@@ -2,6 +2,7 @@ import java.util.Comparator;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+@SuppressWarnings({"all"})
 public class treeset_map_practice {
     @SuppressWarnings({"all"})
     public static void main(String[] args) {
@@ -9,7 +10,6 @@ public class treeset_map_practice {
         TreeSet treeSet = new TreeSet(new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                // TODO Auto-generated method stub
                 // return ((String)o1).compareTo((String)o2); //根据字符串的大小排序 从小到大
                 return (((String)o1).length()) -  (((String)o2).length()); //根据长度排序 小到大
             }
@@ -26,7 +26,6 @@ public class treeset_map_practice {
         TreeMap treeMap = new TreeMap(new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                // TODO Auto-generated method stub
                 // return ((String)o2).compareTo((String)o1); //字符串大到小
                 return ((String)o2).length() - ((String)o1).length(); //长度大到小
             }
@@ -45,7 +44,6 @@ public class treeset_map_practice {
 
 //     @Override
 //     public int compareTo(Object o) {
-//         // TODO Auto-generated method stub
 //         return 0;
 //     }
     

@@ -50,6 +50,7 @@ public class JdbsConn {
         connect.close();
     }
 
+    @SuppressWarnings({"all"})
     public static void connect03() throws Exception{
         //3.使用DriverManager替代Driver进行统一管理
         Class<?> aClass = Class.forName("com.mysql.jdbc.Driver");

@@ -89,7 +89,7 @@ Apache-DBUtils：
 1.commons-dbutils是Apache组织提供的一个开源JDBC工具类，是对JDBC的封装，使用dbutils能极大简化jdbc编码的工作量。
 
 DbUtils类
-1.QueryRunner类：该类封装了SQL的执行，是线程安全的。可实现增删改差，批处理
+1.QueryRunner类：该类封装了SQL的执行，是线程安全的。可实现增删改查，批处理
 2.使用QueryRunner类实现查询
 3.ResultSetHandler接口：该接口用于处理java.sql.ResultSet，将数据转换成另一种形式
 
@@ -118,8 +118,10 @@ DAO和增删改差通用方法-BasicDAO
 
 简单设计：utils工具类，domain(javabean)，dao存放XxxDao和BasicDAO，test写测试类
 
+(可变形参 eg.public int update(String sql, Object... parameters){} 这个方法中的形参是可变个数的)
 
+界面层->业务层(服务层)->DAO层->数据层
 
-
-看到p855
+看到p856 6:50
+全部学完，再push一遍
 */

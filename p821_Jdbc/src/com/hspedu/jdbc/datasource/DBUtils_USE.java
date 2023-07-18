@@ -10,7 +10,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.junit.Test;
 
-import com.hspedu.jdbc.utils.JDBCUtils;
+// import com.hspedu.jdbc.utils.JDBCUtils;
 
 public class DBUtils_USE {
 
