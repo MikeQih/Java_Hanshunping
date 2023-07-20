@@ -16,6 +16,7 @@ import com.hspedu.mhl.utils.Utility;
 /**
  * 主界面
  */
+@SuppressWarnings({"all"})
 public class MHLView {
     //控制是否退出菜单
     private boolean loop = true;
